@@ -2,12 +2,14 @@ import express from 'express';
 import cors from 'cors';
 import { connectDB } from './mongo/connection/index.js';
 import dotenv from 'dotenv';
+import userRouter from './router/user.router.js';
 
 const app = express();
 dotenv.config();
 app.use(express.json());
 app.use(cors());
 
+app.use('/api/user',userRouter);
 app.get('/',(req,res)=>{
     res.send('Server is running🚀');
 })
