@@ -17,6 +17,21 @@ const userSchema = mongoose.Schema({
     type: String,
     required: true,
   },
+  bestScore: {
+    type: Number,
+    default: 0,
+    min: 0,
+  },
+  gamesPlayed: {
+    type: Number,
+    default: 0,
+    min: 0,
+  },
+  coins: {
+    type: Number,
+    default: 0,
+    min: 0,
+  },
 });
 
 export const User =mongoose.model("User",userSchema);
